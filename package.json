@@ -1,0 +1,19 @@
+{
+  "name": "pyramid-todo",
+  "version": "1.0.0",
+  "description": "PyramidToDo\r ===========",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test specified"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdwyReed/Pyramid-ToDo.git"
+  },
+  "author": "EdwyReed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdwyReed/Pyramid-ToDo/issues"
+  },
+  "homepage": "https://github.com/EdwyReed/Pyramid-ToDo#readme"
+}
