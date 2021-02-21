@@ -14,7 +14,7 @@
       </button>
     </div>
   </div>
-  <div class="row justify-content-md-center" style="justify-content: center !important; -webkit-box-pack: center !important;">
+  <div class="row">
     <div class="col-md-8 shw-ts task-list">
       {% for task in tasks %}
         <div class="task-item btn-group-toggle" data-toggle="buttons">
@@ -24,6 +24,8 @@
           <span>
             {{ task }}
           </span>
+          <button class="btn btn-delete">
+          </button>
         </div>
       {% endfor %}
     </div>

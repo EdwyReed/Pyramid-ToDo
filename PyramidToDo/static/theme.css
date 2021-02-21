@@ -33,6 +33,10 @@ p {
   font-weight: 700;
 }
 
+.row {
+  justify-content: center;
+}
+
 .main-block {
   margin-top: 50px;
 }
@@ -271,6 +275,17 @@ p {
   background-size: 100%;
 }
 
+.btn-delete {
+  border-radius: 0;
+  height: 100%;
+  border-width: 0px 0px 0px 2px !important;
+  width: 53px;
+  background-image: url(https://icons.getbootstrap.com/icons/trash.svg) !important;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .task-list {
   background-color: white;
   color: black;
@@ -293,8 +308,10 @@ p {
   border-width: 2px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .task-item span {
   font-weight: bold;
+  width: 100%;
 }
