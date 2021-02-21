@@ -1,5 +1,31 @@
 {% extends "layout.jinja2" %}
 
 {% block content %}
-
+  <div class="row form-group new-task-block">
+    <div class="col-md-6 task-input">
+      <input id="textinput" type="text" placeholder="Yout task" class="form-control input-md shw-ts">
+    </div>
+    <div class="col-md-6 btn-group-flex">
+      <button class="btn btn-primary btn-lg btn-add">
+        <p>Добавить</p>
+      </button>
+      <button class="btn btn-primary btn-lg btn-clear">
+        <p>Стереть</p>
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-md-center" style="justify-content: center !important; -webkit-box-pack: center !important;">
+    <div class="col-md-8 shw-ts task-list">
+      {% for task in tasks %}
+        <div class="task-item btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-check">
+            <input type="checkbox" checked autocomplete="off">
+          </label>
+          <span>
+            {{ task }}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock content %}
