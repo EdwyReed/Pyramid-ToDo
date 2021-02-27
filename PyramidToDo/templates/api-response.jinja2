@@ -1,0 +1,23 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+{% raw %}
+  <div id="main">
+    <div class="row">
+      <div class="col-md-8 shw-ts task-list">
+          <div v-for="task in tasks" class="task-item btn-group-toggle" data-toggle="buttons">
+            <button class="btn btn-check">
+              <input type="checkbox" autocomplete="off">
+            </button>
+            <span>
+              {{ task[2] }}
+            </span>
+            <button class="btn btn-delete"></button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../static/js/main.js"></script>
+{% endraw %}
+{% endblock content %}

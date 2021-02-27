@@ -296,6 +296,14 @@ p {
   border-style: solid !important;
   border-width: 2px !important;
   border-color: black !important;
+  max-height: 450px;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.task-list::-webkit-scrollbar {
+  display: none;
 }
 
 .task-item {
@@ -321,5 +329,5 @@ p {
 }
 
 .inactive.task-item {
-  box-shadow: inset 0px 0px 20px 25px rgba(0, 0, 0, 0.50);
+  box-shadow: inset 20px -13px 20px 20px rgba(0, 0, 0, 0.50);
 }
