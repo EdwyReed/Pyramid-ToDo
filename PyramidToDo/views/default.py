@@ -8,16 +8,7 @@ load_dotenv()
 
 @view_config(route_name='home', renderer='../templates/mytemplate.jinja2')
 def my_view(request):
-    conn = connect()
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM tasks')
-    res = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return {
-        'project': 'Pyramid ToDo',
-        'tasks': res
-    }
+    return {'project': 'Pyramid ToDo'}
 
 
 # TODO make template with list of API methods
@@ -42,7 +33,7 @@ def add_new(request):
     conn = connect()
     cursor = conn.cursor()
     task = request.params['task']
-    cursor.execute('INSERT INTO tasks (state, task) VALUES (False, %s)', (task, ))
+    cursor.execute('INSERT INTO tasks (state, task) VALUES (False, %s)', (task,))
     conn.commit()
     cursor.close()
     conn.close()
@@ -67,11 +58,12 @@ def delete(request):
     conn = connect()
     cursor = conn.cursor()
     id = request.params['id']
-    cursor.execute('DELETE FROM tasks WHERE id = %s', (id, ))
+    cursor.execute('DELETE FROM tasks WHERE id = %s', (id,))
     conn.commit()
     cursor.close()
     conn.close()
     return {}
+
 
 def connect():
     return psycopg2.connect(dbname=os.getenv("DBNAME"),
