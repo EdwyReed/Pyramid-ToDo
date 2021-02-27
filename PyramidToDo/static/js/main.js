@@ -13,11 +13,13 @@ new Vue({
             this.tasks = JSON.parse(req.response).data;
         },
         add_new_task: function () {
-            var req = new XMLHttpRequest();
-            req.open("POST", "api/add?task=" + this.new_task_text, false);
-            req.send(null);
-            this.new_task_text = '';
-            this.get_all();
+            if (this.new_task_text != '') {
+                var req = new XMLHttpRequest();
+                req.open("POST", "api/add?task=" + this.new_task_text, false);
+                req.send(null);
+                this.new_task_text = '';
+                this.get_all();
+            }
         },
         update_state: function (task) {
             var req = new XMLHttpRequest();
